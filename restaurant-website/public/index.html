@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#11110f">
+  <meta name="description" content="Discover exquisite dining, handcrafted dishes and unforgettable moments at Velvet Table.">
+  <title>Velvet Table | Fine Dining Experience</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles.css">
+  <script src="/app.js" defer></script>
+</head>
+<body>
+  <div class="announcement">A little luxury, served daily <span>✦</span> Open 11 AM – 10 PM</div>
+  <header class="site-header">
+    <a class="brand" href="#home" aria-label="Velvet Table home">
+      <span class="brand-mark">V<span>T</span></span>
+      <span class="brand-copy"><strong>VELVET TABLE</strong><small>FINE DINING & BAR</small></span>
+    </a>
+    <button class="nav-toggle" id="navToggle" aria-label="Open navigation" aria-expanded="false"><span></span><span></span><span></span></button>
+    <nav class="nav-links" id="navLinks">
+      <a href="#home">Home</a><a href="#menu">Our Menu</a><a href="#story">Our Story</a><a href="#reservation">Reservations</a>
+    </nav>
+    <button class="cart-trigger" id="cartOpen" type="button" aria-label="Open shopping cart">
+      <span class="cart-icon" aria-hidden="true">♧</span><span>Cart</span><span class="cart-count" id="cartCount">0</span>
+    </button>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="hero-image" role="img" aria-label="Elegant restaurant dining atmosphere"></div><div class="hero-overlay"></div>
+      <div class="hero-content">
+        <span class="eyebrow"><span class="gold-line"></span> AN EXTRAORDINARY DINING EXPERIENCE</span>
+        <h1>Where every<br>meal becomes <em>a memory.</em></h1>
+        <p>Thoughtfully crafted dishes. Beautiful ingredients. Moments worth slowing down for.</p>
+        <div class="hero-actions"><a class="btn btn-gold" href="#menu">Explore Our Menu <span>↗</span></a><a class="btn btn-outline" href="#reservation">Reserve a Table</a></div>
+        <div class="hero-note"><span class="stars">★★★★★</span><span>Made with passion. Served with elegance.</span></div>
+      </div>
+      <div class="hero-side-label">GOOD FOOD. GOOD COMPANY.</div>
+    </section>
+
+    <section class="experience-strip" id="story">
+      <div class="experience-item"><span class="experience-icon">✦</span><div><strong>Fresh Ingredients</strong><small>Quality in every bite</small></div></div>
+      <div class="experience-item"><span class="experience-icon">♨</span><div><strong>Crafted With Care</strong><small>Passion on every plate</small></div></div>
+      <div class="experience-item"><span class="experience-icon">◇</span><div><strong>Intimate Ambience</strong><small>Made for memorable moments</small></div></div>
+      <div class="experience-item"><span class="experience-icon">♡</span><div><strong>Warm Hospitality</strong><small>You're always welcome</small></div></div>
+    </section>
+
+    <section class="menu-section section-pad" id="menu">
+      <div class="section-heading">
+        <div><span class="eyebrow"><span class="gold-line"></span> A TASTE OF SOMETHING SPECIAL</span><h2>Our <em>signature menu</em></h2><p>Seasonal favourites, timeless classics and a few delicious surprises.</p></div>
+        <span class="menu-counter" id="menuCounter">Loading menu...</span>
+      </div>
+      <div class="menu-toolbar">
+        <div class="filter-list" id="menuFilters" aria-label="Filter menu categories">
+          <button class="filter-btn active" type="button" data-category="All">All Dishes</button>
+          <button class="filter-btn" type="button" data-category="Starters">Starters</button>
+          <button class="filter-btn" type="button" data-category="Mains">Mains</button>
+          <button class="filter-btn" type="button" data-category="Desserts">Desserts</button>
+          <button class="filter-btn" type="button" data-category="Drinks">Drinks</button>
+        </div>
+        <label class="search-box"><span aria-hidden="true">⌕</span><input type="search" id="menuSearch" placeholder="Find your favourite..." aria-label="Search menu"></label>
+      </div>
+      <div class="menu-status" id="menuStatus" role="status"></div>
+      <div class="menu-grid" id="menuGrid" aria-live="polite"></div>
+    </section>
+
+    <section class="reservation-section" id="reservation">
+      <div class="reservation-photo" role="img" aria-label="Fine dining table setting"></div>
+      <div class="reservation-content">
+        <span class="eyebrow"><span class="gold-line"></span> YOUR TABLE AWAITS</span>
+        <h2>Make it an <em>evening to remember.</em></h2>
+        <p>Celebrate the everyday or make a special occasion unforgettable. Tell us when you'd like to visit.</p>
+        <form id="reservationForm" class="reservation-form">
+          <div class="form-row">
+            <label>Full name<input name="name" type="text" placeholder="Your name" maxlength="100" autocomplete="name" required></label>
+            <label>Phone number<input name="phone" type="tel" placeholder="+91 98765 43210" maxlength="20" autocomplete="tel" required></label>
+          </div>
+          <label>Email address<input name="email" type="email" placeholder="you@example.com" maxlength="254" autocomplete="email" required></label>
+          <div class="form-row">
+            <label>Date<input name="date" id="reservationDate" type="date" required></label>
+            <label>Time<select name="time" required>
+              <option value="">Choose a time</option><option value="11:00">11:00 AM</option><option value="12:00">12:00 PM</option><option value="13:00">1:00 PM</option><option value="14:00">2:00 PM</option><option value="15:00">3:00 PM</option><option value="16:00">4:00 PM</option><option value="17:00">5:00 PM</option><option value="18:00">6:00 PM</option><option value="19:00">7:00 PM</option><option value="20:00">8:00 PM</option><option value="21:00">9:00 PM</option><option value="22:00">10:00 PM</option>
+            </select></label>
+          </div>
+          <label>Number of guests<select name="guests" required>
+            <option value="1">1 guest</option><option value="2" selected>2 guests</option><option value="3">3 guests</option><option value="4">4 guests</option><option value="5">5 guests</option><option value="6">6 guests</option><option value="7">7 guests</option><option value="8">8 guests</option><option value="9">9 guests</option><option value="10">10 guests</option><option value="11">11 guests</option><option value="12">12 guests</option><option value="13">13 guests</option><option value="14">14 guests</option><option value="15">15 guests</option><option value="16">16 guests</option><option value="17">17 guests</option><option value="18">18 guests</option><option value="19">19 guests</option><option value="20">20 guests</option>
+          </select></label>
+          <label>Special requests <span class="optional">(optional)</span><textarea name="notes" rows="3" maxlength="500" placeholder="A birthday, dietary preferences, or anything we should know..."></textarea></label>
+          <button class="btn btn-gold btn-full" type="submit" id="reserveSubmit">Request a Reservation <span>↗</span></button>
+          <p class="form-message" id="reservationMessage" role="status" aria-live="polite"></p>
+          <p class="fine-print">Your reservation is a request and will require confirmation by the restaurant.</p>
+        </form>
+      </div>
+    </section>
+
+    <section class="closing-section"><span class="eyebrow">THE VELVET TABLE EXPERIENCE</span><h2>Good food brings us together.<br><em>Great food stays with us.</em></h2><a class="btn btn-gold" href="#menu">Find Your Favourite Dish ↗</a></section>
+  </main>
+
+  <footer class="site-footer">
+    <a class="brand footer-brand" href="#home"><span class="brand-mark">V<span>T</span></span><span class="brand-copy"><strong>VELVET TABLE</strong><small>FINE DINING & BAR</small></span></a>
+    <p>Thoughtfully prepared. Beautifully served.</p>
+    <div class="footer-links"><a href="#menu">Menu</a><a href="#reservation">Reservations</a><a href="mailto:hello@example.com">Contact</a></div>
+    <small class="copyright">© <span id="currentYear"></span> Velvet Table. Crafted with care.</small>
+  </footer>
+
+  <div class="drawer-backdrop" id="cartBackdrop" hidden></div>
+  <aside class="cart-drawer" id="cartDrawer" role="dialog" aria-modal="true" aria-labelledby="cartTitle" aria-hidden="true" inert>
+    <div class="cart-header"><div><span class="eyebrow">SOMETHING DELICIOUS</span><h2 id="cartTitle">Your <em>basket.</em></h2></div><button class="icon-btn" id="cartClose" type="button" aria-label="Close shopping cart">✕</button></div>
+    <div class="cart-items" id="cartItems" aria-live="polite"></div>
+    <div class="cart-empty" id="cartEmpty"><span class="empty-icon">♧</span><h3>Your basket is waiting</h3><p>Something delicious belongs here.</p><button class="btn btn-outline" id="continueShopping" type="button">Explore the Menu</button></div>
+    <div class="cart-bottom" id="cartBottom">
+      <div class="cart-summary"><div><span>Subtotal</span><strong id="cartSubtotal">₹0.00</strong></div><div><span>Tax (5%)</span><strong id="cartTax">₹0.00</strong></div><div class="cart-total"><span>Total</span><strong id="cartTotal">₹0.00</strong></div></div>
+      <form id="checkoutForm" class="checkout-form">
+        <h3>Delivery contact details</h3>
+        <label>Full name<input name="name" type="text" maxlength="100" autocomplete="name" required></label>
+        <label>Email address<input name="email" type="email" maxlength="254" autocomplete="email" required></label>
+        <label>Phone number<input name="phone" type="tel" maxlength="20" autocomplete="tel" required></label>
+        <button class="btn btn-gold btn-full" id="checkoutSubmit" type="submit">Place Order <span>↗</span></button>
+        <p class="form-message" id="checkoutMessage" role="status" aria-live="polite"></p>
+        <p class="fine-print">Demo checkout only. No payment is collected.</p>
+      </form>
+    </div>
+  </aside>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+</body>
+</html>
